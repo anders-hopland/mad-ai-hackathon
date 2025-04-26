@@ -1,0 +1,9 @@
+langchain-openai>=0.0.5
+langchain-google-genai>=0.0.3
+browser-use>=0.1.41
+python-dotenv>=1.0.0
+
+[dev]
+pytest>=7.0.0
+black>=23.0.0
+isort>=5.12.0

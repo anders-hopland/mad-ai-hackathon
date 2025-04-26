@@ -1,0 +1,11 @@
+README.md
+pyproject.toml
+autoqa/__init__.py
+autoqa/cli.py
+autoqa/core.py
+autoqa/models.py
+autoqa.egg-info/PKG-INFO
+autoqa.egg-info/SOURCES.txt
+autoqa.egg-info/dependency_links.txt
+autoqa.egg-info/requires.txt
+autoqa.egg-info/top_level.txt

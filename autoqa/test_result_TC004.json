@@ -1,0 +1,5 @@
+{
+  "actual_result": "Clicked the \"Fjern fra handlekurven\" button. The item was removed from the basket, and the \"Legg til i handlekurven\" button is now visible.",
+  "status": "PASS",
+  "notes": "The UI reverted to showing the 'Legg til i handlekurven' button as expected."
+}

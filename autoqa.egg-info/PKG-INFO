@@ -1,3 +1,19 @@
+Metadata-Version: 2.4
+Name: autoqa
+Version: 0.1.0
+Summary: Automated web testing system using BrowserUse
+License: MIT
+Requires-Python: >=3.13
+Description-Content-Type: text/markdown
+Requires-Dist: langchain-openai>=0.0.5
+Requires-Dist: langchain-google-genai>=0.0.3
+Requires-Dist: browser-use>=0.1.41
+Requires-Dist: python-dotenv>=1.0.0
+Provides-Extra: dev
+Requires-Dist: pytest>=7.0.0; extra == "dev"
+Requires-Dist: black>=23.0.0; extra == "dev"
+Requires-Dist: isort>=5.12.0; extra == "dev"
+
 # AutoQA - Automated Web Testing System
 
 This project was created for the Mad AI Hackathon. AutoQA is an automated web testing system that uses BrowserUse to explore websites, create test plans, and execute tests without manual intervention.
