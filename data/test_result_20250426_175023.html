@@ -1,0 +1,542 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>test_result_20250426_175023.md</title>
+<meta http-equiv="Content-type" content="text/html;charset=UTF-8">
+
+<style>
+/* https://github.com/microsoft/vscode/blob/master/extensions/markdown-language-features/media/markdown.css */
+/*---------------------------------------------------------------------------------------------
+ *  Copyright (c) Microsoft Corporation. All rights reserved.
+ *  Licensed under the MIT License. See License.txt in the project root for license information.
+ *--------------------------------------------------------------------------------------------*/
+
+body {
+	font-family: var(--vscode-markdown-font-family, -apple-system, BlinkMacSystemFont, "Segoe WPC", "Segoe UI", "Ubuntu", "Droid Sans", sans-serif);
+	font-size: var(--vscode-markdown-font-size, 14px);
+	padding: 0 26px;
+	line-height: var(--vscode-markdown-line-height, 22px);
+	word-wrap: break-word;
+}
+
+#code-csp-warning {
+	position: fixed;
+	top: 0;
+	right: 0;
+	color: white;
+	margin: 16px;
+	text-align: center;
+	font-size: 12px;
+	font-family: sans-serif;
+	background-color:#444444;
+	cursor: pointer;
+	padding: 6px;
+	box-shadow: 1px 1px 1px rgba(0,0,0,.25);
+}
+
+#code-csp-warning:hover {
+	text-decoration: none;
+	background-color:#007acc;
+	box-shadow: 2px 2px 2px rgba(0,0,0,.25);
+}
+
+body.scrollBeyondLastLine {
+	margin-bottom: calc(100vh - 22px);
+}
+
+body.showEditorSelection .code-line {
+	position: relative;
+}
+
+body.showEditorSelection .code-active-line:before,
+body.showEditorSelection .code-line:hover:before {
+	content: "";
+	display: block;
+	position: absolute;
+	top: 0;
+	left: -12px;
+	height: 100%;
+}
+
+body.showEditorSelection li.code-active-line:before,
+body.showEditorSelection li.code-line:hover:before {
+	left: -30px;
+}
+
+.vscode-light.showEditorSelection .code-active-line:before {
+	border-left: 3px solid rgba(0, 0, 0, 0.15);
+}
+
+.vscode-light.showEditorSelection .code-line:hover:before {
+	border-left: 3px solid rgba(0, 0, 0, 0.40);
+}
+
+.vscode-light.showEditorSelection .code-line .code-line:hover:before {
+	border-left: none;
+}
+
+.vscode-dark.showEditorSelection .code-active-line:before {
+	border-left: 3px solid rgba(255, 255, 255, 0.4);
+}
+
+.vscode-dark.showEditorSelection .code-line:hover:before {
+	border-left: 3px solid rgba(255, 255, 255, 0.60);
+}
+
+.vscode-dark.showEditorSelection .code-line .code-line:hover:before {
+	border-left: none;
+}
+
+.vscode-high-contrast.showEditorSelection .code-active-line:before {
+	border-left: 3px solid rgba(255, 160, 0, 0.7);
+}
+
+.vscode-high-contrast.showEditorSelection .code-line:hover:before {
+	border-left: 3px solid rgba(255, 160, 0, 1);
+}
+
+.vscode-high-contrast.showEditorSelection .code-line .code-line:hover:before {
+	border-left: none;
+}
+
+img {
+	max-width: 100%;
+	max-height: 100%;
+}
+
+a {
+	text-decoration: none;
+}
+
+a:hover {
+	text-decoration: underline;
+}
+
+a:focus,
+input:focus,
+select:focus,
+textarea:focus {
+	outline: 1px solid -webkit-focus-ring-color;
+	outline-offset: -1px;
+}
+
+hr {
+	border: 0;
+	height: 2px;
+	border-bottom: 2px solid;
+}
+
+h1 {
+	padding-bottom: 0.3em;
+	line-height: 1.2;
+	border-bottom-width: 1px;
+	border-bottom-style: solid;
+}
+
+h1, h2, h3 {
+	font-weight: normal;
+}
+
+table {
+	border-collapse: collapse;
+}
+
+table > thead > tr > th {
+	text-align: left;
+	border-bottom: 1px solid;
+}
+
+table > thead > tr > th,
+table > thead > tr > td,
+table > tbody > tr > th,
+table > tbody > tr > td {
+	padding: 5px 10px;
+}
+
+table > tbody > tr + tr > td {
+	border-top: 1px solid;
+}
+
+blockquote {
+	margin: 0 7px 0 5px;
+	padding: 0 16px 0 10px;
+	border-left-width: 5px;
+	border-left-style: solid;
+}
+
+code {
+	font-family: Menlo, Monaco, Consolas, "Droid Sans Mono", "Courier New", monospace, "Droid Sans Fallback";
+	font-size: 1em;
+	line-height: 1.357em;
+}
+
+body.wordWrap pre {
+	white-space: pre-wrap;
+}
+
+pre:not(.hljs),
+pre.hljs code > div {
+	padding: 16px;
+	border-radius: 3px;
+	overflow: auto;
+}
+
+pre code {
+	color: var(--vscode-editor-foreground);
+	tab-size: 4;
+}
+
+/** Theming */
+
+.vscode-light pre {
+	background-color: rgba(220, 220, 220, 0.4);
+}
+
+.vscode-dark pre {
+	background-color: rgba(10, 10, 10, 0.4);
+}
+
+.vscode-high-contrast pre {
+	background-color: rgb(0, 0, 0);
+}
+
+.vscode-high-contrast h1 {
+	border-color: rgb(0, 0, 0);
+}
+
+.vscode-light table > thead > tr > th {
+	border-color: rgba(0, 0, 0, 0.69);
+}
+
+.vscode-dark table > thead > tr > th {
+	border-color: rgba(255, 255, 255, 0.69);
+}
+
+.vscode-light h1,
+.vscode-light hr,
+.vscode-light table > tbody > tr + tr > td {
+	border-color: rgba(0, 0, 0, 0.18);
+}
+
+.vscode-dark h1,
+.vscode-dark hr,
+.vscode-dark table > tbody > tr + tr > td {
+	border-color: rgba(255, 255, 255, 0.18);
+}
+
+</style>
+
+<style>
+/* Tomorrow Theme */
+/* http://jmblog.github.com/color-themes-for-google-code-highlightjs */
+/* Original theme - https://github.com/chriskempson/tomorrow-theme */
+
+/* Tomorrow Comment */
+.hljs-comment,
+.hljs-quote {
+	color: #8e908c;
+}
+
+/* Tomorrow Red */
+.hljs-variable,
+.hljs-template-variable,
+.hljs-tag,
+.hljs-name,
+.hljs-selector-id,
+.hljs-selector-class,
+.hljs-regexp,
+.hljs-deletion {
+	color: #c82829;
+}
+
+/* Tomorrow Orange */
+.hljs-number,
+.hljs-built_in,
+.hljs-builtin-name,
+.hljs-literal,
+.hljs-type,
+.hljs-params,
+.hljs-meta,
+.hljs-link {
+	color: #f5871f;
+}
+
+/* Tomorrow Yellow */
+.hljs-attribute {
+	color: #eab700;
+}
+
+/* Tomorrow Green */
+.hljs-string,
+.hljs-symbol,
+.hljs-bullet,
+.hljs-addition {
+	color: #718c00;
+}
+
+/* Tomorrow Blue */
+.hljs-title,
+.hljs-section {
+	color: #4271ae;
+}
+
+/* Tomorrow Purple */
+.hljs-keyword,
+.hljs-selector-tag {
+	color: #8959a8;
+}
+
+.hljs {
+	display: block;
+	overflow-x: auto;
+	color: #4d4d4c;
+	padding: 0.5em;
+}
+
+.hljs-emphasis {
+	font-style: italic;
+}
+
+.hljs-strong {
+	font-weight: bold;
+}
+</style>
+
+<style>
+/*
+ * Markdown PDF CSS
+ */
+
+ body {
+	font-family: -apple-system, BlinkMacSystemFont, "Segoe WPC", "Segoe UI", "Ubuntu", "Droid Sans", sans-serif, "Meiryo";
+	padding: 0 12px;
+}
+
+pre {
+	background-color: #f8f8f8;
+	border: 1px solid #cccccc;
+	border-radius: 3px;
+	overflow-x: auto;
+	white-space: pre-wrap;
+	overflow-wrap: break-word;
+}
+
+pre:not(.hljs) {
+	padding: 23px;
+	line-height: 19px;
+}
+
+blockquote {
+	background: rgba(127, 127, 127, 0.1);
+	border-color: rgba(0, 122, 204, 0.5);
+}
+
+.emoji {
+	height: 1.4em;
+}
+
+code {
+	font-size: 14px;
+	line-height: 19px;
+}
+
+/* for inline code */
+:not(pre):not(.hljs) > code {
+	color: #C9AE75; /* Change the old color so it seems less like an error */
+	font-size: inherit;
+}
+
+/* Page Break : use <div class="page"/> to insert page break
+-------------------------------------------------------- */
+.page {
+	page-break-after: always;
+}
+
+</style>
+
+<script src="https://unpkg.com/mermaid/dist/mermaid.min.js"></script>
+</head>
+<body>
+  <script>
+    mermaid.initialize({
+      startOnLoad: true,
+      theme: document.body.classList.contains('vscode-dark') || document.body.classList.contains('vscode-high-contrast')
+          ? 'dark'
+          : 'default'
+    });
+  </script>
+<h1 id="test-results-report">Test Results Report</h1>
+<h2 id="summary">Summary</h2>
+<p>❌ <strong>Overall Result: FAIL</strong></p>
+<ul>
+<li><strong>Website</strong>: oda.no</li>
+<li><strong>Scenario</strong>: adding products to basket</li>
+<li><strong>Date</strong>: 2025-04-26 17:50:23</li>
+<li><strong>Total Tests</strong>: 6</li>
+<li><strong>Passed</strong>: 4</li>
+<li><strong>Failed</strong>: 1</li>
+<li><strong>Errors</strong>: 1</li>
+<li><strong>Pass Rate</strong>: 66.67%</li>
+</ul>
+<h2 id="timing">Timing</h2>
+<ul>
+<li><strong>Planning Phase</strong>: 174.33 seconds</li>
+<li><strong>Execution Phase</strong>: 388.33 seconds</li>
+<li><strong>Total Time</strong>: 562.66 seconds</li>
+</ul>
+<h2 id="test-cases">Test Cases</h2>
+<table>
+<thead>
+<tr>
+<th>ID</th>
+<th>Description</th>
+<th style="text-align:center">Status</th>
+<th style="text-align:center">Time</th>
+<th>Notes</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>TC001</td>
+<td>Add a product to the basket from the category page.</td>
+<td style="text-align:center">✅ PASS</td>
+<td style="text-align:center">36.54 s</td>
+<td>The 'Legg til i handlekurven' button successfully ...</td>
+</tr>
+<tr>
+<td>TC002</td>
+<td>Increase the quantity of a product in the basket from the category page.</td>
+<td style="text-align:center">✅ PASS</td>
+<td style="text-align:center">38.05 s</td>
+<td>The quantity increased as expected on the category...</td>
+</tr>
+<tr>
+<td>TC003</td>
+<td>Decrease the quantity of a product in the basket from the category page.</td>
+<td style="text-align:center">⚠️ ERROR</td>
+<td style="text-align:center">144.05 s</td>
+<td>Error processing execution result: Could not parse...</td>
+</tr>
+<tr>
+<td>TC004</td>
+<td>Remove a product from the basket from the category page.</td>
+<td style="text-align:center">✅ PASS</td>
+<td style="text-align:center">37.63 s</td>
+<td>The product was removed from the basket as expecte...</td>
+</tr>
+<tr>
+<td>TC005</td>
+<td>Attempt to add a very large quantity of a product.</td>
+<td style="text-align:center">❌ FAIL</td>
+<td style="text-align:center">90.42 s</td>
+<td>The page structure changed after adding the item a...</td>
+</tr>
+<tr>
+<td>TC006</td>
+<td>Add a product from the product detail page.</td>
+<td style="text-align:center">✅ PASS</td>
+<td style="text-align:center">41.63 s</td>
+<td>Initial attempt to click the button used the wrong...</td>
+</tr>
+</tbody>
+</table>
+<h2 id="detailed-test-results">Detailed Test Results</h2>
+<h3 id="tc001-add-a-product-to-the-basket-from-the-category-page">TC001: Add a product to the basket from the category page.</h3>
+<p><strong>Status</strong>: ✅ PASS</p>
+<p><strong>Execution Time</strong>: 36.54 seconds</p>
+<p><strong>Steps</strong>:</p>
+<ol>
+<li>Navigate to a product category page.</li>
+<li>Locate a product.</li>
+<li>Click the 'Legg til i handlekurven' (Add to basket) button for the product.</li>
+</ol>
+<p><strong>Expected Result</strong>:
+The product should be added to the basket, and the 'Legg til i handlekurven' button should change to show the current quantity and options to increase/decrease/remove.</p>
+<p><strong>Actual Result</strong>:
+Navigated to oda.no, accepted cookies, navigated to 'Alle produkter' category page, and clicked 'Legg til i handlekurven' for 'Kvikk Lunsj 6-pk'. The button changed to show quantity 1, a remove button, and an add button.</p>
+<p><strong>Notes</strong>:
+The 'Legg til i handlekurven' button successfully changed to show the current quantity and options to increase/decrease/remove, matching the expected result.</p>
+<hr>
+<h3 id="tc002-increase-the-quantity-of-a-product-in-the-basket-from-the-category-page">TC002: Increase the quantity of a product in the basket from the category page.</h3>
+<p><strong>Status</strong>: ✅ PASS</p>
+<p><strong>Execution Time</strong>: 38.05 seconds</p>
+<p><strong>Steps</strong>:</p>
+<ol>
+<li>Navigate to a product category page.</li>
+<li>Add a product to the basket.</li>
+<li>Click the '+' button next to the product in the category view.</li>
+</ol>
+<p><strong>Expected Result</strong>:
+The quantity of the product in the basket should increase by one, and the displayed quantity on the page should update.</p>
+<p><strong>Actual Result</strong>:
+Navigated to a category page, added a product to the basket, and clicked the '+' button. The quantity displayed for the product updated from 1 to 2.</p>
+<p><strong>Notes</strong>:
+The quantity increased as expected on the category page.</p>
+<hr>
+<h3 id="tc003-decrease-the-quantity-of-a-product-in-the-basket-from-the-category-page">TC003: Decrease the quantity of a product in the basket from the category page.</h3>
+<p><strong>Status</strong>: ⚠️ ERROR</p>
+<p><strong>Execution Time</strong>: 144.05 seconds</p>
+<p><strong>Steps</strong>:</p>
+<ol>
+<li>Navigate to a product category page.</li>
+<li>Add at least two of the same product to the basket.</li>
+<li>Click the '-' button next to the product in the category view.</li>
+</ol>
+<p><strong>Expected Result</strong>:
+The quantity of the product in the basket should decrease by one, and the displayed quantity on the page should update. If the quantity becomes one, the '-' button might disappear or become disabled.</p>
+<p><strong>Actual Result</strong>:
+None</p>
+<p><strong>Notes</strong>:
+Error processing execution result: Could not parse the extracted JSON</p>
+<hr>
+<h3 id="tc004-remove-a-product-from-the-basket-from-the-category-page">TC004: Remove a product from the basket from the category page.</h3>
+<p><strong>Status</strong>: ✅ PASS</p>
+<p><strong>Execution Time</strong>: 37.63 seconds</p>
+<p><strong>Steps</strong>:</p>
+<ol>
+<li>Navigate to a product category page.</li>
+<li>Add a product to the basket.</li>
+<li>Click the '-' button until the quantity is zero or click the 'Fjern fra handlekurven' (Remove from basket) button.</li>
+</ol>
+<p><strong>Expected Result</strong>:
+The product should be removed from the basket, and the controls should revert to the initial 'Legg til i handlekurven' button.</p>
+<p><strong>Actual Result</strong>:
+Added 'Kjekkas Grønn Ekeblad' to the basket, and then the button reverted to 'Legg til i handlekurven' (Add to basket), indicating the product was removed.</p>
+<p><strong>Notes</strong>:
+The product was removed from the basket as expected. No explicit remove button or '-' button was needed as the add button became available again.</p>
+<hr>
+<h3 id="tc005-attempt-to-add-a-very-large-quantity-of-a-product">TC005: Attempt to add a very large quantity of a product.</h3>
+<p><strong>Status</strong>: ❌ FAIL</p>
+<p><strong>Execution Time</strong>: 90.42 seconds</p>
+<p><strong>Steps</strong>:</p>
+<ol>
+<li>Navigate to a product category page.</li>
+<li>Locate a product.</li>
+<li>Attempt to input a very large number (e.g., 999) into the quantity input field or repeatedly click the '+' button.</li>
+</ol>
+<p><strong>Expected Result</strong>:
+The system should handle the large quantity gracefully. There might be a maximum quantity limit, an error message, or performance degradation.</p>
+<p><strong>Actual Result</strong>:
+Navigated to the 'Frukt og grønt' category, added 'Mangoterninger' to the cart, and successfully increased the quantity to 10 by clicking the '+' button repeatedly. Attempted to input '999' into the quantity field, but the page state changed unexpectedly, and the product's quantity controls were no longer identifiable by the previous index. Subsequent attempts to scroll and locate the product and its quantity input failed. The test could not be completed as the quantity input field for a large quantity could not be located after the initial attempt to add a large quantity.</p>
+<p><strong>Notes</strong>:
+The page structure changed after adding the item and clicking '+', causing the previously identified input field index to become invalid. Repeated scrolling did not bring the product back into the visible area.</p>
+<hr>
+<h3 id="tc006-add-a-product-from-the-product-detail-page">TC006: Add a product from the product detail page.</h3>
+<p><strong>Status</strong>: ✅ PASS</p>
+<p><strong>Execution Time</strong>: 41.63 seconds</p>
+<p><strong>Steps</strong>:</p>
+<ol>
+<li>Navigate to a product category page.</li>
+<li>Click on a product to go to its detail page.</li>
+<li>Locate and click the 'Legg til i handlekurven' (Add to basket) button on the product detail page.</li>
+</ol>
+<p><strong>Expected Result</strong>:
+The product should be added to the basket, and the UI on the detail page should reflect the item being in the basket.</p>
+<p><strong>Actual Result</strong>:
+Navigated to product detail page, clicked 'Legg til i handlekurven'. The UI updated to show 'Fjern fra handlekurven' and the quantity input with value '2', indicating the product was added to the basket.</p>
+<p><strong>Notes</strong>:
+Initial attempt to click the button used the wrong index, but the subsequent click with the correct index was successful and the UI updated as expected.</p>
+<hr>
+
+</body>
+</html>

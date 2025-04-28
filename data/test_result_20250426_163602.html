@@ -1,0 +1,533 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>test_result_20250426_163602.md</title>
+<meta http-equiv="Content-type" content="text/html;charset=UTF-8">
+
+<style>
+/* https://github.com/microsoft/vscode/blob/master/extensions/markdown-language-features/media/markdown.css */
+/*---------------------------------------------------------------------------------------------
+ *  Copyright (c) Microsoft Corporation. All rights reserved.
+ *  Licensed under the MIT License. See License.txt in the project root for license information.
+ *--------------------------------------------------------------------------------------------*/
+
+body {
+	font-family: var(--vscode-markdown-font-family, -apple-system, BlinkMacSystemFont, "Segoe WPC", "Segoe UI", "Ubuntu", "Droid Sans", sans-serif);
+	font-size: var(--vscode-markdown-font-size, 14px);
+	padding: 0 26px;
+	line-height: var(--vscode-markdown-line-height, 22px);
+	word-wrap: break-word;
+}
+
+#code-csp-warning {
+	position: fixed;
+	top: 0;
+	right: 0;
+	color: white;
+	margin: 16px;
+	text-align: center;
+	font-size: 12px;
+	font-family: sans-serif;
+	background-color:#444444;
+	cursor: pointer;
+	padding: 6px;
+	box-shadow: 1px 1px 1px rgba(0,0,0,.25);
+}
+
+#code-csp-warning:hover {
+	text-decoration: none;
+	background-color:#007acc;
+	box-shadow: 2px 2px 2px rgba(0,0,0,.25);
+}
+
+body.scrollBeyondLastLine {
+	margin-bottom: calc(100vh - 22px);
+}
+
+body.showEditorSelection .code-line {
+	position: relative;
+}
+
+body.showEditorSelection .code-active-line:before,
+body.showEditorSelection .code-line:hover:before {
+	content: "";
+	display: block;
+	position: absolute;
+	top: 0;
+	left: -12px;
+	height: 100%;
+}
+
+body.showEditorSelection li.code-active-line:before,
+body.showEditorSelection li.code-line:hover:before {
+	left: -30px;
+}
+
+.vscode-light.showEditorSelection .code-active-line:before {
+	border-left: 3px solid rgba(0, 0, 0, 0.15);
+}
+
+.vscode-light.showEditorSelection .code-line:hover:before {
+	border-left: 3px solid rgba(0, 0, 0, 0.40);
+}
+
+.vscode-light.showEditorSelection .code-line .code-line:hover:before {
+	border-left: none;
+}
+
+.vscode-dark.showEditorSelection .code-active-line:before {
+	border-left: 3px solid rgba(255, 255, 255, 0.4);
+}
+
+.vscode-dark.showEditorSelection .code-line:hover:before {
+	border-left: 3px solid rgba(255, 255, 255, 0.60);
+}
+
+.vscode-dark.showEditorSelection .code-line .code-line:hover:before {
+	border-left: none;
+}
+
+.vscode-high-contrast.showEditorSelection .code-active-line:before {
+	border-left: 3px solid rgba(255, 160, 0, 0.7);
+}
+
+.vscode-high-contrast.showEditorSelection .code-line:hover:before {
+	border-left: 3px solid rgba(255, 160, 0, 1);
+}
+
+.vscode-high-contrast.showEditorSelection .code-line .code-line:hover:before {
+	border-left: none;
+}
+
+img {
+	max-width: 100%;
+	max-height: 100%;
+}
+
+a {
+	text-decoration: none;
+}
+
+a:hover {
+	text-decoration: underline;
+}
+
+a:focus,
+input:focus,
+select:focus,
+textarea:focus {
+	outline: 1px solid -webkit-focus-ring-color;
+	outline-offset: -1px;
+}
+
+hr {
+	border: 0;
+	height: 2px;
+	border-bottom: 2px solid;
+}
+
+h1 {
+	padding-bottom: 0.3em;
+	line-height: 1.2;
+	border-bottom-width: 1px;
+	border-bottom-style: solid;
+}
+
+h1, h2, h3 {
+	font-weight: normal;
+}
+
+table {
+	border-collapse: collapse;
+}
+
+table > thead > tr > th {
+	text-align: left;
+	border-bottom: 1px solid;
+}
+
+table > thead > tr > th,
+table > thead > tr > td,
+table > tbody > tr > th,
+table > tbody > tr > td {
+	padding: 5px 10px;
+}
+
+table > tbody > tr + tr > td {
+	border-top: 1px solid;
+}
+
+blockquote {
+	margin: 0 7px 0 5px;
+	padding: 0 16px 0 10px;
+	border-left-width: 5px;
+	border-left-style: solid;
+}
+
+code {
+	font-family: Menlo, Monaco, Consolas, "Droid Sans Mono", "Courier New", monospace, "Droid Sans Fallback";
+	font-size: 1em;
+	line-height: 1.357em;
+}
+
+body.wordWrap pre {
+	white-space: pre-wrap;
+}
+
+pre:not(.hljs),
+pre.hljs code > div {
+	padding: 16px;
+	border-radius: 3px;
+	overflow: auto;
+}
+
+pre code {
+	color: var(--vscode-editor-foreground);
+	tab-size: 4;
+}
+
+/** Theming */
+
+.vscode-light pre {
+	background-color: rgba(220, 220, 220, 0.4);
+}
+
+.vscode-dark pre {
+	background-color: rgba(10, 10, 10, 0.4);
+}
+
+.vscode-high-contrast pre {
+	background-color: rgb(0, 0, 0);
+}
+
+.vscode-high-contrast h1 {
+	border-color: rgb(0, 0, 0);
+}
+
+.vscode-light table > thead > tr > th {
+	border-color: rgba(0, 0, 0, 0.69);
+}
+
+.vscode-dark table > thead > tr > th {
+	border-color: rgba(255, 255, 255, 0.69);
+}
+
+.vscode-light h1,
+.vscode-light hr,
+.vscode-light table > tbody > tr + tr > td {
+	border-color: rgba(0, 0, 0, 0.18);
+}
+
+.vscode-dark h1,
+.vscode-dark hr,
+.vscode-dark table > tbody > tr + tr > td {
+	border-color: rgba(255, 255, 255, 0.18);
+}
+
+</style>
+
+<style>
+/* Tomorrow Theme */
+/* http://jmblog.github.com/color-themes-for-google-code-highlightjs */
+/* Original theme - https://github.com/chriskempson/tomorrow-theme */
+
+/* Tomorrow Comment */
+.hljs-comment,
+.hljs-quote {
+	color: #8e908c;
+}
+
+/* Tomorrow Red */
+.hljs-variable,
+.hljs-template-variable,
+.hljs-tag,
+.hljs-name,
+.hljs-selector-id,
+.hljs-selector-class,
+.hljs-regexp,
+.hljs-deletion {
+	color: #c82829;
+}
+
+/* Tomorrow Orange */
+.hljs-number,
+.hljs-built_in,
+.hljs-builtin-name,
+.hljs-literal,
+.hljs-type,
+.hljs-params,
+.hljs-meta,
+.hljs-link {
+	color: #f5871f;
+}
+
+/* Tomorrow Yellow */
+.hljs-attribute {
+	color: #eab700;
+}
+
+/* Tomorrow Green */
+.hljs-string,
+.hljs-symbol,
+.hljs-bullet,
+.hljs-addition {
+	color: #718c00;
+}
+
+/* Tomorrow Blue */
+.hljs-title,
+.hljs-section {
+	color: #4271ae;
+}
+
+/* Tomorrow Purple */
+.hljs-keyword,
+.hljs-selector-tag {
+	color: #8959a8;
+}
+
+.hljs {
+	display: block;
+	overflow-x: auto;
+	color: #4d4d4c;
+	padding: 0.5em;
+}
+
+.hljs-emphasis {
+	font-style: italic;
+}
+
+.hljs-strong {
+	font-weight: bold;
+}
+</style>
+
+<style>
+/*
+ * Markdown PDF CSS
+ */
+
+ body {
+	font-family: -apple-system, BlinkMacSystemFont, "Segoe WPC", "Segoe UI", "Ubuntu", "Droid Sans", sans-serif, "Meiryo";
+	padding: 0 12px;
+}
+
+pre {
+	background-color: #f8f8f8;
+	border: 1px solid #cccccc;
+	border-radius: 3px;
+	overflow-x: auto;
+	white-space: pre-wrap;
+	overflow-wrap: break-word;
+}
+
+pre:not(.hljs) {
+	padding: 23px;
+	line-height: 19px;
+}
+
+blockquote {
+	background: rgba(127, 127, 127, 0.1);
+	border-color: rgba(0, 122, 204, 0.5);
+}
+
+.emoji {
+	height: 1.4em;
+}
+
+code {
+	font-size: 14px;
+	line-height: 19px;
+}
+
+/* for inline code */
+:not(pre):not(.hljs) > code {
+	color: #C9AE75; /* Change the old color so it seems less like an error */
+	font-size: inherit;
+}
+
+/* Page Break : use <div class="page"/> to insert page break
+-------------------------------------------------------- */
+.page {
+	page-break-after: always;
+}
+
+</style>
+
+<script src="https://unpkg.com/mermaid/dist/mermaid.min.js"></script>
+</head>
+<body>
+  <script>
+    mermaid.initialize({
+      startOnLoad: true,
+      theme: document.body.classList.contains('vscode-dark') || document.body.classList.contains('vscode-high-contrast')
+          ? 'dark'
+          : 'default'
+    });
+  </script>
+<h1 id="test-results-report">Test Results Report</h1>
+<h2 id="summary">Summary</h2>
+<p>❌ <strong>Overall Result: FAIL</strong></p>
+<ul>
+<li><strong>Website</strong>: https://account-staging.nofence.no/quick-quote/</li>
+<li><strong>Scenario</strong>: Complete the first time buyer quote</li>
+<li><strong>Date</strong>: 2025-04-26 16:36:02</li>
+<li><strong>Total Tests</strong>: 5</li>
+<li><strong>Passed</strong>: 4</li>
+<li><strong>Failed</strong>: 0</li>
+<li><strong>Errors</strong>: 1</li>
+<li><strong>Pass Rate</strong>: 80.00%</li>
+</ul>
+<h2 id="timing">Timing</h2>
+<ul>
+<li><strong>Planning Phase</strong>: 362.62 seconds</li>
+<li><strong>Execution Phase</strong>: 350.18 seconds</li>
+<li><strong>Total Time</strong>: 712.8 seconds</li>
+</ul>
+<h2 id="test-cases">Test Cases</h2>
+<table>
+<thead>
+<tr>
+<th>ID</th>
+<th>Description</th>
+<th style="text-align:center">Status</th>
+<th style="text-align:center">Time</th>
+<th>Notes</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>TC001</td>
+<td>Successfully complete the quick quote form with valid inputs.</td>
+<td style="text-align:center">✅ PASS</td>
+<td style="text-align:center">86.39 s</td>
+<td>All steps of the test case were executed as expect...</td>
+</tr>
+<tr>
+<td>TC002</td>
+<td>Attempt to submit the quick quote form with missing required fields.</td>
+<td style="text-align:center">⚠️ ERROR</td>
+<td style="text-align:center">63.36 s</td>
+<td>Could not complete the test case as designed becau...</td>
+</tr>
+<tr>
+<td>TC003</td>
+<td>Attempt to submit the quick quote form with an invalid email format.</td>
+<td style="text-align:center">✅ PASS</td>
+<td style="text-align:center">40.52 s</td>
+<td>The form correctly validated the email format and ...</td>
+</tr>
+<tr>
+<td>TC004</td>
+<td>Attempt to enter non-numeric input for the number of collars.</td>
+<td style="text-align:center">✅ PASS</td>
+<td style="text-align:center">61.59 s</td>
+<td>The input field is of type 'number', which inheren...</td>
+</tr>
+<tr>
+<td>TC005</td>
+<td>Verify the 'Update calculation' functionality on the completion page.</td>
+<td style="text-align:center">✅ PASS</td>
+<td style="text-align:center">98.32 s</td>
+<td>The user was redirected back to a section of the q...</td>
+</tr>
+</tbody>
+</table>
+<h2 id="detailed-test-results">Detailed Test Results</h2>
+<h3 id="tc001-successfully-complete-the-quick-quote-form-with-valid-inputs">TC001: Successfully complete the quick quote form with valid inputs.</h3>
+<p><strong>Status</strong>: ✅ PASS</p>
+<p><strong>Execution Time</strong>: 86.39 seconds</p>
+<p><strong>Steps</strong>:</p>
+<ol>
+<li>Navigate to the quick quote page.</li>
+<li>Accept cookies.</li>
+<li>Select a valid country (e.g., United Kingdom).</li>
+<li>Enter valid contact information (First Name, Last Name, Company, Email, Phone).</li>
+<li>Select an animal type (e.g., Cow).</li>
+<li>Select a farming purpose (e.g., Beef Cattle).</li>
+<li>Enter a valid number of collars (e.g., 10).</li>
+<li>Select a grazing method (e.g., Extensive).</li>
+<li>Select a pasture description (e.g., Flat, Open pasture).</li>
+<li>Select cellular network strength (e.g., Strong).</li>
+<li>Select a business type (e.g., I represent a farm that is a registered business, with a valid business number.).</li>
+<li>Click the 'Complete' button.</li>
+</ol>
+<p><strong>Expected Result</strong>:
+The user should be directed to the completion page showing a cost estimation and confirmation email address.</p>
+<p><strong>Actual Result</strong>:
+Successfully completed the quick quote form with valid inputs and was directed to the completion page showing a cost estimation and confirmation email address (john.doe@example.com).</p>
+<p><strong>Notes</strong>:
+All steps of the test case were executed as expected.</p>
+<hr>
+<h3 id="tc002-attempt-to-submit-the-quick-quote-form-with-missing-required-fields">TC002: Attempt to submit the quick quote form with missing required fields.</h3>
+<p><strong>Status</strong>: ⚠️ ERROR</p>
+<p><strong>Execution Time</strong>: 63.36 seconds</p>
+<p><strong>Steps</strong>:</p>
+<ol>
+<li>Navigate to the quick quote page.</li>
+<li>Accept cookies.</li>
+<li>Select a valid country.</li>
+<li>Leave one or more required contact information fields blank (e.g., Email).</li>
+<li>Attempt to proceed through the form by clicking 'Next' or 'Complete'.</li>
+</ol>
+<p><strong>Expected Result</strong>:
+The form should display validation errors for the missing required fields, preventing submission.</p>
+<p><strong>Actual Result</strong>:
+Navigated to the quick quote form, selected the country, and proceeded to the contact information page. Filled in the First name and Last name fields, leaving the Email field blank. Attempted to proceed by clicking the 'Next' button, but the button was not interactive or did not have a clickable index, preventing submission attempt.</p>
+<p><strong>Notes</strong>:
+Could not complete the test case as designed because the 'Next' button was not interactable after filling in other fields and leaving email blank. Therefore, could not verify if validation errors appear as expected.</p>
+<hr>
+<h3 id="tc003-attempt-to-submit-the-quick-quote-form-with-an-invalid-email-format">TC003: Attempt to submit the quick quote form with an invalid email format.</h3>
+<p><strong>Status</strong>: ✅ PASS</p>
+<p><strong>Execution Time</strong>: 40.52 seconds</p>
+<p><strong>Steps</strong>:</p>
+<ol>
+<li>Navigate to the quick quote page.</li>
+<li>Accept cookies.</li>
+<li>Select a valid country.</li>
+<li>Enter valid contact information except for the email field, which should have an invalid format (e.g., 'john.doe@example').</li>
+<li>Attempt to proceed through the form by clicking 'Next' or 'Complete'.</li>
+</ol>
+<p><strong>Expected Result</strong>:
+The form should display a validation error for the invalid email format, preventing submission.</p>
+<p><strong>Actual Result</strong>:
+Attempted to submit the form with an invalid email format (john.doe@example). The form did not proceed to the next step and displayed 'Invalid email' next to the email input field.</p>
+<p><strong>Notes</strong>:
+The form correctly validated the email format and prevented submission.</p>
+<hr>
+<h3 id="tc004-attempt-to-enter-non-numeric-input-for-the-number-of-collars">TC004: Attempt to enter non-numeric input for the number of collars.</h3>
+<p><strong>Status</strong>: ✅ PASS</p>
+<p><strong>Execution Time</strong>: 61.59 seconds</p>
+<p><strong>Steps</strong>:</p>
+<ol>
+<li>Navigate to the quick quote page.</li>
+<li>Accept cookies.</li>
+<li>Proceed through the form to the 'Number of collars' step.</li>
+<li>Enter non-numeric characters in the 'Number of collars' input field (e.g., 'ten').</li>
+<li>Attempt to proceed by clicking 'Next'.</li>
+</ol>
+<p><strong>Expected Result</strong>:
+The form should prevent the input of non-numeric characters or display a validation error, preventing progression.</p>
+<p><strong>Actual Result</strong>:
+Attempted to enter non-numeric input ('ten') into the 'Number of collars' field. The form did not allow proceeding to the next step after entering non-numeric characters. The 'Next' button became disabled.</p>
+<p><strong>Notes</strong>:
+The input field is of type 'number', which inherently restricts non-numeric input. The form correctly prevented progression.</p>
+<hr>
+<h3 id="tc005-verify-the-update-calculation-functionality-on-the-completion-page">TC005: Verify the 'Update calculation' functionality on the completion page.</h3>
+<p><strong>Status</strong>: ✅ PASS</p>
+<p><strong>Execution Time</strong>: 98.32 seconds</p>
+<p><strong>Steps</strong>:</p>
+<ol>
+<li>Successfully complete the quick quote form (TC001).</li>
+<li>On the completion page, click the 'Update calculation' button.</li>
+</ol>
+<p><strong>Expected Result</strong>:
+The user should be redirected back to a step in the quick quote form to modify inputs, or a modal/section should appear allowing for updates to the calculation.</p>
+<p><strong>Actual Result</strong>:
+Clicked the 'Update calculation' button on the completion page. The page redirected to a view showing the 'Number of animals' and 'What species?' inputs, allowing modification of these values.</p>
+<p><strong>Notes</strong>:
+The user was redirected back to a section of the quick quote form to modify inputs, fulfilling the expected result.</p>
+<hr>
+
+</body>
+</html>

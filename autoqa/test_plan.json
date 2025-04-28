@@ -1,66 +1,64 @@
-```json
 {
   "test_cases": [
     {
       "id": "TC001",
-      "description": "Add a single item to the basket",
+      "description": "Add a product to the basket from the category page.",
       "steps": [
-        "Navigate to the website: https://oda.no",
-        "Accept cookies (if prompted)",
-        "Search for a product (e.g., 'milk')",
-        "Click on the 'Legg til i handlekurven' button for a product"
+        "Navigate to a product category page.",
+        "Locate a product.",
+        "Click the 'Legg til i handlekurven' (Add to basket) button for the product."
       ],
-      "expected_result": "The item should be added to the basket, and the UI should update to show the item quantity and options to add/remove."
+      "expected_result": "The product should be added to the basket, and the 'Legg til i handlekurven' button should change to show the current quantity and options to increase/decrease/remove."
     },
     {
       "id": "TC002",
-      "description": "Add multiple units of the same item",
+      "description": "Increase the quantity of a product in the basket from the category page.",
       "steps": [
-        "Navigate to the website: https://oda.no",
-        "Accept cookies (if prompted)",
-        "Search for a product (e.g., 'milk')",
-        "Click on the 'Legg til i handlekurven' button for a product",
-        "Click on the '+' or 'Legg til i handlekurven' button again for the same product"
+        "Navigate to a product category page.",
+        "Add a product to the basket.",
+        "Click the '+' button next to the product in the category view."
       ],
-      "expected_result": "The quantity of the item in the basket should increase, and the UI should reflect the updated quantity."
+      "expected_result": "The quantity of the product in the basket should increase by one, and the displayed quantity on the page should update."
     },
     {
       "id": "TC003",
-      "description": "Remove one unit of an item when multiple are present",
+      "description": "Decrease the quantity of a product in the basket from the category page.",
       "steps": [
-        "Navigate to the website: https://oda.no",
-        "Accept cookies (if prompted)",
-        "Search for a product (e.g., 'milk')",
-        "Add at least two units of the same product to the basket",
-        "Click on the '-' or 'Fjern fra handlekurven' button for the product"
+        "Navigate to a product category page.",
+        "Add at least two of the same product to the basket.",
+        "Click the '-' button next to the product in the category view."
       ],
-      "expected_result": "The quantity of the item in the basket should decrease by one, and the UI should reflect the updated quantity."
+      "expected_result": "The quantity of the product in the basket should decrease by one, and the displayed quantity on the page should update. If the quantity becomes one, the '-' button might disappear or become disabled."
     },
     {
       "id": "TC004",
-      "description": "Remove the last unit of an item",
+      "description": "Remove a product from the basket from the category page.",
       "steps": [
-        "Navigate to the website: https://oda.no",
-        "Accept cookies (if prompted)",
-        "Search for a product (e.g., 'milk')",
-        "Add one unit of a product to the basket",
-        "Click on the '-' or 'Fjern fra handlekurven' button for the product"
+        "Navigate to a product category page.",
+        "Add a product to the basket.",
+        "Click the '-' button until the quantity is zero or click the 'Fjern fra handlekurven' (Remove from basket) button."
       ],
-      "expected_result": "The item should be removed from the basket, and the UI should revert to showing the 'Legg til i handlekurven' button for that product."
+      "expected_result": "The product should be removed from the basket, and the controls should revert to the initial 'Legg til i handlekurven' button."
     },
     {
       "id": "TC005",
-      "description": "Add multiple different items to the basket",
+      "description": "Attempt to add a very large quantity of a product.",
       "steps": [
-        "Navigate to the website: https://oda.no",
-        "Accept cookies (if prompted)",
-        "Search for a product (e.g., 'milk')",
-        "Add one unit of a product to the basket",
-        "Search for a different product (e.g., 'bread')",
-        "Click on the 'Legg til i handlekurven' button for the second product"
+        "Navigate to a product category page.",
+        "Locate a product.",
+        "Attempt to input a very large number (e.g., 999) into the quantity input field or repeatedly click the '+' button."
       ],
-      "expected_result": "Both items should be present in the basket, and the basket summary/count should reflect the total number of items."
+      "expected_result": "The system should handle the large quantity gracefully. There might be a maximum quantity limit, an error message, or performance degradation."
+    },
+    {
+      "id": "TC006",
+      "description": "Add a product from the product detail page.",
+      "steps": [
+        "Navigate to a product category page.",
+        "Click on a product to go to its detail page.",
+        "Locate and click the 'Legg til i handlekurven' (Add to basket) button on the product detail page."
+      ],
+      "expected_result": "The product should be added to the basket, and the UI on the detail page should reflect the item being in the basket."
     }
   ]
 }
-```

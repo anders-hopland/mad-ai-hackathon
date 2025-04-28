@@ -31,6 +31,16 @@ def generate_markdown_report(results_file: str, output_file: Optional[str] = Non
     errors = summary.get('errors', 0)
     pass_rate = summary.get('pass_rate', '0%')
     
+    # Extract timing data
+    timing = summary.get('timing', {})
+    planning_time = timing.get('planning_seconds', 0)
+    execution_time = timing.get('execution_seconds', 0)
+    total_time = timing.get('total_seconds', 0)
+    
+    # Get detailed test timing
+    detailed_timing = results.get('timing', {})
+    test_timing = detailed_timing.get('execution', {}).get('tests', {})
+    
     # Create the markdown report
     now = datetime.now().strftime("%Y-%m-%d %H:%M:%S")
     
@@ -50,10 +60,16 @@ def generate_markdown_report(results_file: str, output_file: Optional[str] = Non
 - **Errors**: {errors}
 - **Pass Rate**: {pass_rate}
 
+## Timing
+
+- **Planning Phase**: {planning_time} seconds
+- **Execution Phase**: {execution_time} seconds
+- **Total Time**: {total_time} seconds
+
 ## Test Cases
 
-| ID | Description | Status | Notes |
-|---|---|:---:|---|
+| ID | Description | Status | Time | Notes |
+|---|---|:---:|:---:|---|
 """
     
     # Add each test case to the markdown
@@ -66,8 +82,12 @@ def generate_markdown_report(results_file: str, output_file: Optional[str] = Non
         # Add emoji based on status
         status_emoji = '✅' if status == 'PASS' else '❌' if status == 'FAIL' else '⚠️'
         
+        # Get test timing if available
+        test_time = test_timing.get(test_id, {}).get('duration', '-')
+        test_time_str = f"{test_time} s" if test_time != '-' else '-'
+        
         # Add row to the table
-        markdown += f"| {test_id} | {description} | {status_emoji} {status} | {notes[:50]}{'...' if len(notes) > 50 else ''} |\n"
+        markdown += f"| {test_id} | {description} | {status_emoji} {status} | {test_time_str} | {notes[:50]}{'...' if len(notes) > 50 else ''} |\n"
     
     # Add detailed test results section
     markdown += "\n## Detailed Test Results\n\n"
@@ -86,6 +106,11 @@ def generate_markdown_report(results_file: str, output_file: Optional[str] = Non
         
         markdown += f"### {test_id}: {description}\n\n"
         markdown += f"**Status**: {status_emoji} {status}\n\n"
+        
+        # Add test timing if available
+        test_time = test_timing.get(test_id, {}).get('duration', '-')
+        if test_time != '-':
+            markdown += f"**Execution Time**: {test_time} seconds\n\n"
         
         markdown += "**Steps**:\n"
         for i, step in enumerate(steps, 1):

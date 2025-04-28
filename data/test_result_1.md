@@ -6,22 +6,28 @@
 
 - **Website**: oda.no
 - **Scenario**: add products to basket
-- **Date**: 2025-04-26 15:52:05
+- **Date**: 2025-04-26 16:15:34
 - **Total Tests**: 5
 - **Passed**: 5
 - **Failed**: 0
 - **Errors**: 0
 - **Pass Rate**: 100.00%
 
+## Timing
+
+- **Planning Phase**: 0 seconds
+- **Execution Phase**: 0 seconds
+- **Total Time**: 0 seconds
+
 ## Test Cases
 
-| ID | Description | Status | Notes |
-|---|---|:---:|---|
-| TC001 | Add a single item to the basket | ✅ PASS | The initial click added 2 items instead of 1, but ... |
-| TC002 | Add multiple units of the same item | ✅ PASS | The test case executed as expected. Adding multipl... |
-| TC003 | Remove one unit of an item when multiple are present | ✅ PASS | Encountered some inconsistencies between interacti... |
-| TC004 | Remove the last unit of an item | ✅ PASS | The UI reverted to showing the 'Legg til i handlek... |
-| TC005 | Add multiple different items to the basket | ✅ PASS | The initial basket contained 1 item. After adding ... |
+| ID | Description | Status | Time | Notes |
+|---|---|:---:|:---:|---|
+| TC001 | Add a single item to the basket | ✅ PASS | - | The initial click added 2 items instead of 1, but ... |
+| TC002 | Add multiple units of the same item | ✅ PASS | - | The test case executed as expected. Adding multipl... |
+| TC003 | Remove one unit of an item when multiple are present | ✅ PASS | - | Encountered some inconsistencies between interacti... |
+| TC004 | Remove the last unit of an item | ✅ PASS | - | The UI reverted to showing the 'Legg til i handlek... |
+| TC005 | Add multiple different items to the basket | ✅ PASS | - | The initial basket contained 1 item. After adding ... |
 
 ## Detailed Test Results
 

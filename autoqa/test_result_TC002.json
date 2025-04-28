@@ -1,5 +1,5 @@
 {
-  "actual_result": "The quantity of 'Tine Fettfri Melk Skummet' in the basket increased with each click on the '+' button (index 9), and the UI updated to show 3 items in the basket. The input field next to the item also shows the value '3'.",
+  "actual_result": "Navigated to a category page, added a product to the basket, and clicked the '+' button. The quantity displayed for the product updated from 1 to 2.",
   "status": "PASS",
-  "notes": "The test case executed as expected. Adding multiple units of the same item works correctly."
+  "notes": "The quantity increased as expected on the category page."
 }

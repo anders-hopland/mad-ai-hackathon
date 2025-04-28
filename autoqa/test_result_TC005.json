@@ -1,1 +1,5 @@
-{"actual_result": "Navigated to the website, accepted cookies, searched for 'milk', added one milk product to the basket. Searched for 'bread', and added one bread product (Naan Bread) to the basket. The basket now shows 3 items.", "status": "PASS", "notes": "The initial basket contained 1 item. After adding milk, it showed 2 items. After adding bread, it showed 3 items. Both milk and bread are present in the basket summary."}
+{
+  "actual_result": "Navigated to the 'Frukt og grønt' category, added 'Mangoterninger' to the cart, and successfully increased the quantity to 10 by clicking the '+' button repeatedly. Attempted to input '999' into the quantity field, but the page state changed unexpectedly, and the product's quantity controls were no longer identifiable by the previous index. Subsequent attempts to scroll and locate the product and its quantity input failed. The test could not be completed as the quantity input field for a large quantity could not be located after the initial attempt to add a large quantity.",
+  "status": "FAIL",
+  "notes": "The page structure changed after adding the item and clicking '+', causing the previously identified input field index to become invalid. Repeated scrolling did not bring the product back into the visible area."
+}
