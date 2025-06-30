@@ -1,64 +1,77 @@
+```json
 {
   "test_cases": [
     {
       "id": "TC001",
-      "description": "Add a product to the basket from the category page.",
+      "description": "Basic checkout flow for a new user with valid details.",
       "steps": [
-        "Navigate to a product category page.",
-        "Locate a product.",
-        "Click the 'Legg til i handlekurven' (Add to basket) button for the product."
+        "Step 1: Navigate to the website and accept cookies.",
+        "Step 2: Search for a product (e.g., milk) and add it to the cart.",
+        "Step 3: Go to the shopping cart.",
+        "Step 4: Click \"Fortsett\" to proceed to checkout.",
+        "Step 5: Enter a valid delivery address and select from suggestions.",
+        "Step 6: Enter a valid date of birth (over 18).",
+        "Step 7: Fill in contact information (phone, name, email, password) to create a new account.",
+        "Step 8: Confirm email address (manual step, assume successful).",
+        "Step 9: Proceed to payment and enter valid payment details.",
+        "Step 10: Confirm the order."
       ],
-      "expected_result": "The product should be added to the basket, and the 'Legg til i handlekurven' button should change to show the current quantity and options to increase/decrease/remove."
+      "expected_result": "The order should be placed successfully, and a confirmation page/email should be received."
     },
     {
       "id": "TC002",
-      "description": "Increase the quantity of a product in the basket from the category page.",
+      "description": "Attempt to checkout with an empty shopping cart.",
       "steps": [
-        "Navigate to a product category page.",
-        "Add a product to the basket.",
-        "Click the '+' button next to the product in the category view."
+        "Step 1: Navigate to the website and accept cookies.",
+        "Step 2: Go to the shopping cart (without adding any items).",
+        "Step 3: Attempt to proceed to checkout."
       ],
-      "expected_result": "The quantity of the product in the basket should increase by one, and the displayed quantity on the page should update."
+      "expected_result": "The system should prevent the user from proceeding to checkout and display a message indicating the cart is empty."
     },
     {
       "id": "TC003",
-      "description": "Decrease the quantity of a product in the basket from the category page.",
+      "description": "Age verification with a date of birth under 18.",
       "steps": [
-        "Navigate to a product category page.",
-        "Add at least two of the same product to the basket.",
-        "Click the '-' button next to the product in the category view."
+        "Step 1: Navigate to the website and accept cookies.",
+        "Step 2: Add a product to the cart and proceed to checkout.",
+        "Step 3: Enter delivery address.",
+        "Step 4: Enter a date of birth that makes the user under 18.",
+        "Step 5: Attempt to proceed."
       ],
-      "expected_result": "The quantity of the product in the basket should decrease by one, and the displayed quantity on the page should update. If the quantity becomes one, the '-' button might disappear or become disabled."
+      "expected_result": "The system should display an error message and prevent the user from proceeding due to age restrictions."
     },
     {
       "id": "TC004",
-      "description": "Remove a product from the basket from the category page.",
+      "description": "Account creation with an email address that is already registered.",
       "steps": [
-        "Navigate to a product category page.",
-        "Add a product to the basket.",
-        "Click the '-' button until the quantity is zero or click the 'Fjern fra handlekurven' (Remove from basket) button."
+        "Step 1: Navigate to the website and accept cookies.",
+        "Step 2: Add a product to the cart and proceed through address and age verification.",
+        "Step 3: Fill in contact information using an email address that is already associated with an existing account.",
+        "Step 4: Attempt to create the account."
       ],
-      "expected_result": "The product should be removed from the basket, and the controls should revert to the initial 'Legg til i handlekurven' button."
+      "expected_result": "The system should display an error message indicating that the email address is already in use."
     },
     {
       "id": "TC005",
-      "description": "Attempt to add a very large quantity of a product.",
+      "description": "Checkout with an invalid delivery address format.",
       "steps": [
-        "Navigate to a product category page.",
-        "Locate a product.",
-        "Attempt to input a very large number (e.g., 999) into the quantity input field or repeatedly click the '+' button."
+        "Step 1: Navigate to the website and accept cookies.",
+        "Step 2: Add a product to the cart and proceed to checkout.",
+        "Step 3: Enter a delivery address in an invalid format (e.g., missing street number, invalid characters).",
+        "Step 4: Attempt to proceed."
       ],
-      "expected_result": "The system should handle the large quantity gracefully. There might be a maximum quantity limit, an error message, or performance degradation."
+      "expected_result": "The system should display an error message and prevent the user from proceeding until a valid address is entered."
     },
     {
       "id": "TC006",
-      "description": "Add a product from the product detail page.",
+      "description": "Simulate a payment failure during checkout.",
       "steps": [
-        "Navigate to a product category page.",
-        "Click on a product to go to its detail page.",
-        "Locate and click the 'Legg til i handlekurven' (Add to basket) button on the product detail page."
+        "Step 1: Follow steps for a basic checkout (TC001) up to the payment stage.",
+        "Step 2: During the payment process, simulate a payment failure (e.g., using a test card with insufficient funds or a rejected transaction).",
+        "Step 3: Observe the system's response."
       ],
-      "expected_result": "The product should be added to the basket, and the UI on the detail page should reflect the item being in the basket."
+      "expected_result": "The system should display an error message indicating payment failure and provide instructions on how to proceed (e.g., try again, use a different payment method). The order should not be confirmed."
     }
   ]
 }
+```

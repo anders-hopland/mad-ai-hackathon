@@ -4,6 +4,7 @@ autoqa/__init__.py
 autoqa/cli.py
 autoqa/core.py
 autoqa/models.py
+autoqa/report.py
 autoqa.egg-info/PKG-INFO
 autoqa.egg-info/SOURCES.txt
 autoqa.egg-info/dependency_links.txt

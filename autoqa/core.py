@@ -20,7 +20,7 @@ class AutoQA:
         self.scenario = scenario
         self.test_plan = TestPlan(url, scenario)
         self.results = []
-        self.llm = llm or ChatGoogleGenerativeAI(model="gemini-flash")
+        self.llm = llm or ChatGoogleGenerativeAI(model="gemini-2.5-flash-preview-04-17")
         self.timing = {
             "planning": {"start": None, "end": None, "duration": None},
             "execution": {"start": None, "end": None, "duration": None, "tests": {}},
