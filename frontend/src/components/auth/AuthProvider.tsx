@@ -20,11 +20,36 @@ export default function AuthProvider({ children }: AuthProviderProps) {
       setToken(token);
       // Remove token from URL
       window.history.replaceState({}, document.title, window.location.pathname);
+      // Immediately fetch user info with the new token
+      fetchUserWithToken(token);
+    } else {
+      // Try to get user info if we have a stored token
+      fetchUser();
     }
-
-    // Try to get user info if we have a token
-    fetchUser();
   }, []);
+
+  const fetchUserWithToken = async (token: string) => {
+    try {
+      const response = await fetch('/api/auth/me', {
+        headers: {
+          Authorization: `Bearer ${token}`,
+        },
+      });
+
+      if (response.ok) {
+        const userData = await response.json();
+        setUser(userData);
+      } else {
+        // Token is invalid
+        removeToken();
+      }
+    } catch (error) {
+      console.error('Failed to fetch user:', error);
+      removeToken();
+    } finally {
+      setIsLoading(false);
+    }
+  };
 
   const fetchUser = async () => {
     const token = getToken();
@@ -34,7 +59,7 @@ export default function AuthProvider({ children }: AuthProviderProps) {
     }
 
     try {
-      const response = await fetch('http://localhost:8000/auth/me', {
+      const response = await fetch('/api/auth/me', {
         headers: {
           Authorization: `Bearer ${token}`,
         },

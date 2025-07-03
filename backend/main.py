@@ -246,11 +246,13 @@ async def google_callback(code: str, db: Session = Depends(get_db)):
                 google_id=google_user.id,
                 picture=google_user.picture,
             )
+            logger.info(f"Created new user: {user.email} with ID: {user.id}")
+        logger.info(f"Logging in user: {user.email} with ID: {user.id}")
 
         # Create JWT token
         access_token_expires = timedelta(minutes=ACCESS_TOKEN_EXPIRE_MINUTES)
         jwt_token = create_access_token(
-            data={"sub": user.id}, expires_delta=access_token_expires
+            data={"sub": str(user.id)}, expires_delta=access_token_expires
         )
 
         print("succesfully authenticated")

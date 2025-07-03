@@ -2,18 +2,18 @@
 
 import { useEffect } from 'react';
 import { useRouter } from 'next/navigation';
+import { useAuth } from '@/lib/auth';
 
 export default function AuthSuccess() {
   const router = useRouter();
+  const { user, isLoading } = useAuth();
 
   useEffect(() => {
-    // AuthProvider handles token extraction, just redirect to home
-    const timer = setTimeout(() => {
+    // Wait for auth to complete, then redirect if user is authenticated
+    if (!isLoading && user) {
       router.push('/');
-    }, 1000);
-
-    return () => clearTimeout(timer);
-  }, [router]);
+    }
+  }, [user, isLoading, router]);
 
   return (
     <div className="min-h-screen flex items-center justify-center">

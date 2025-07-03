@@ -1,4 +1,5 @@
 import axios from 'axios';
+import { getToken } from './auth';
 
 // Create an axios instance with default config
 const api = axios.create({
@@ -7,6 +8,21 @@ const api = axios.create({
     'Content-Type': 'application/json',
   },
 });
+
+// Add request interceptor to include auth token
+api.interceptors.request.use(
+  (config) => {
+    const token = getToken();
+    console.log({token})
+    if (token) {
+      config.headers.Authorization = `Bearer ${token}`;
+    }
+    return config;
+  },
+  (error) => {
+    return Promise.reject(error);
+  }
+);
 
 // Types for API responses
 export interface TestRun {
@@ -39,29 +55,29 @@ export interface TestLog {
 export const apiClient = {
   // Test runs
   createTestRun: async (url: string, scenario: string): Promise<TestRun> => {
-    const response = await api.post('/api/test-runs', { url, scenario });
+    const response = await api.post('/test-runs', { url, scenario });
     return response.data;
   },
   
   getTestRuns: async (): Promise<TestRun[]> => {
-    const response = await api.get('/api/test-runs');
+    const response = await api.get('/test-runs');
     return response.data;
   },
   
   getTestRun: async (id: string): Promise<TestRun> => {
-    const response = await api.get(`/api/test-runs/${id}`);
+    const response = await api.get(`/test-runs/${id}`);
     return response.data;
   },
   
   // Test cases
   getTestCases: async (testRunId: string): Promise<TestCase[]> => {
-    const response = await api.get(`/api/test-runs/${testRunId}/cases`);
+    const response = await api.get(`/test-runs/${testRunId}/cases`);
     return response.data;
   },
   
   // Test logs
   getTestLogs: async (testRunId: string): Promise<TestLog[]> => {
-    const response = await api.get(`/api/test-runs/${testRunId}/logs`);
+    const response = await api.get(`/test-runs/${testRunId}/logs`);
     return response.data;
   },
 };
