@@ -1,5 +1,1 @@
-{
-  "actual_result": "Navigated to the 'Frukt og grønt' category, added 'Mangoterninger' to the cart, and successfully increased the quantity to 10 by clicking the '+' button repeatedly. Attempted to input '999' into the quantity field, but the page state changed unexpectedly, and the product's quantity controls were no longer identifiable by the previous index. Subsequent attempts to scroll and locate the product and its quantity input failed. The test could not be completed as the quantity input field for a large quantity could not be located after the initial attempt to add a large quantity.",
-  "status": "FAIL",
-  "notes": "The page structure changed after adding the item and clicking '+', causing the previously identified input field index to become invalid. Repeated scrolling did not bring the product back into the visible area."
-}
+{"actual_result": "Attempted to input '0' into the quantity field for Bananer, but the quantity remained at '1'. Attempted to input '-1' into the quantity field, but the quantity remained at '1'. The system prevented adding zero or negative quantities.", "status": "PASS", "notes": "The quantity field reverted to the minimum of 1 when attempting to input 0 or -1."}

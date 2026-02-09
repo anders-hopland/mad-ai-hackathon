@@ -1,77 +1,65 @@
-```json
 {
   "test_cases": [
     {
       "id": "TC001",
-      "description": "Basic checkout flow for a new user with valid details.",
+      "description": "Add a single quantity of Bananer to the cart.",
       "steps": [
-        "Step 1: Navigate to the website and accept cookies.",
-        "Step 2: Search for a product (e.g., milk) and add it to the cart.",
-        "Step 3: Go to the shopping cart.",
-        "Step 4: Click \"Fortsett\" to proceed to checkout.",
-        "Step 5: Enter a valid delivery address and select from suggestions.",
-        "Step 6: Enter a valid date of birth (over 18).",
-        "Step 7: Fill in contact information (phone, name, email, password) to create a new account.",
-        "Step 8: Confirm email address (manual step, assume successful).",
-        "Step 9: Proceed to payment and enter valid payment details.",
-        "Step 10: Confirm the order."
+        "Navigate to https://oda.no/",
+        "Accept cookies.",
+        "Search for 'banana'.",
+        "Click on the 'Legg til i handlekurven' button for 'Bananer'."
       ],
-      "expected_result": "The order should be placed successfully, and a confirmation page/email should be received."
+      "expected_result": "The 'Bananer' item should be added to the cart, and the cart icon/summary should reflect the added item and quantity."
     },
     {
       "id": "TC002",
-      "description": "Attempt to checkout with an empty shopping cart.",
+      "description": "Add multiple quantities of Bananer i Klase to the cart.",
       "steps": [
-        "Step 1: Navigate to the website and accept cookies.",
-        "Step 2: Go to the shopping cart (without adding any items).",
-        "Step 3: Attempt to proceed to checkout."
+        "Navigate to https://oda.no/",
+        "Accept cookies.",
+        "Search for 'banana'.",
+        "Locate 'Bananer i Klase' in the search results.",
+        "Click the '+' button next to 'Bananer i Klase' multiple times to increase the quantity.",
+        "Verify the quantity displayed for 'Bananer i Klase'."
       ],
-      "expected_result": "The system should prevent the user from proceeding to checkout and display a message indicating the cart is empty."
+      "expected_result": "The quantity of 'Bananer i Klase' in the cart should increase with each click of the '+' button. The cart icon/summary should update accordingly."
     },
     {
       "id": "TC003",
-      "description": "Age verification with a date of birth under 18.",
+      "description": "Add both Bananer and Bananer i Klase to the cart.",
       "steps": [
-        "Step 1: Navigate to the website and accept cookies.",
-        "Step 2: Add a product to the cart and proceed to checkout.",
-        "Step 3: Enter delivery address.",
-        "Step 4: Enter a date of birth that makes the user under 18.",
-        "Step 5: Attempt to proceed."
+        "Navigate to https://oda.no/",
+        "Accept cookies.",
+        "Search for 'banana'.",
+        "Add 'Bananer' to the cart.",
+        "Add 'Bananer i Klase' to the cart."
       ],
-      "expected_result": "The system should display an error message and prevent the user from proceeding due to age restrictions."
+      "expected_result": "Both 'Bananer' and 'Bananer i Klase' should appear as separate items in the cart. The total number of items and the subtotal in the cart summary should be correct."
     },
     {
       "id": "TC004",
-      "description": "Account creation with an email address that is already registered.",
+      "description": "Remove an item from the cart after adding it.",
       "steps": [
-        "Step 1: Navigate to the website and accept cookies.",
-        "Step 2: Add a product to the cart and proceed through address and age verification.",
-        "Step 3: Fill in contact information using an email address that is already associated with an existing account.",
-        "Step 4: Attempt to create the account."
+        "Navigate to https://oda.no/",
+        "Accept cookies.",
+        "Search for 'banana'.",
+        "Add 'Bananer' to the cart.",
+        "Locate 'Bananer' in the cart summary or cart page.",
+        "Click the 'Fjern fra handlekurven' (Remove from cart) button for 'Bananer'."
       ],
-      "expected_result": "The system should display an error message indicating that the email address is already in use."
+      "expected_result": "The 'Bananer' item should be removed from the cart. The cart icon/summary should update to reflect the removal."
     },
     {
       "id": "TC005",
-      "description": "Checkout with an invalid delivery address format.",
+      "description": "Attempt to add an item with a quantity of zero or a negative quantity (if possible via direct input).",
       "steps": [
-        "Step 1: Navigate to the website and accept cookies.",
-        "Step 2: Add a product to the cart and proceed to checkout.",
-        "Step 3: Enter a delivery address in an invalid format (e.g., missing street number, invalid characters).",
-        "Step 4: Attempt to proceed."
+        "Navigate to https://oda.no/",
+        "Accept cookies.",
+        "Search for 'banana'.",
+        "Locate an item like 'Bananer'.",
+        "Attempt to manually input '0' or '-1' into the quantity field next to the item."
       ],
-      "expected_result": "The system should display an error message and prevent the user from proceeding until a valid address is entered."
-    },
-    {
-      "id": "TC006",
-      "description": "Simulate a payment failure during checkout.",
-      "steps": [
-        "Step 1: Follow steps for a basic checkout (TC001) up to the payment stage.",
-        "Step 2: During the payment process, simulate a payment failure (e.g., using a test card with insufficient funds or a rejected transaction).",
-        "Step 3: Observe the system's response."
-      ],
-      "expected_result": "The system should display an error message indicating payment failure and provide instructions on how to proceed (e.g., try again, use a different payment method). The order should not be confirmed."
+      "expected_result": "The system should prevent adding zero or negative quantities. The quantity should either revert to a minimum of 1 or display an error message."
     }
   ]
 }
-```

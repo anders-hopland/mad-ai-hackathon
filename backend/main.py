@@ -25,7 +25,7 @@ import json
 
 # Import database and CRUD operations
 from .database import init_db, get_db, TestRun, TestPlan, TestCase, TestLog, User
-from sqlmodel import Session
+from sqlalchemy.orm import Session
 from . import crud
 
 # Import AutoQA service

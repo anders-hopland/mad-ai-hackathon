@@ -1,8 +1,8 @@
 """
-CRUD operations for AutoQA Web Application using SQLModel
+CRUD operations for AutoQA Web Application using SQLAlchemy
 """
 
-from sqlmodel import Session, select
+from sqlalchemy.orm import Session
 from datetime import datetime
 import json
 import uuid
@@ -34,32 +34,21 @@ def get_test_run(db: Session, run_id: str) -> Optional[TestRun]:
     """
     Get a test run by its run_id
     """
-    statement = select(TestRun).where(TestRun.run_id == run_id)
-    return db.exec(statement).first()
+    return db.query(TestRun).filter(TestRun.run_id == run_id).first()
 
 
 def get_test_runs(db: Session, skip: int = 0, limit: int = 100) -> List[TestRun]:
     """
     Get all test runs with pagination
     """
-    statement = (
-        select(TestRun).order_by(TestRun.created_at.desc()).offset(skip).limit(limit)
-    )
-    return db.exec(statement).all()
+    return db.query(TestRun).order_by(TestRun.created_at.desc()).offset(skip).limit(limit).all()
 
 
 def get_user_test_runs(db: Session, user_id: int, skip: int = 0, limit: int = 100) -> List[TestRun]:
     """
     Get test runs for a specific user with pagination
     """
-    statement = (
-        select(TestRun)
-        .where(TestRun.user_id == user_id)
-        .order_by(TestRun.created_at.desc())
-        .offset(skip)
-        .limit(limit)
-    )
-    return db.exec(statement).all()
+    return db.query(TestRun).filter(TestRun.user_id == user_id).order_by(TestRun.created_at.desc()).offset(skip).limit(limit).all()
 
 
 def update_test_run_status(db: Session, run_id: str, status: str) -> Optional[TestRun]:
@@ -98,8 +87,7 @@ def get_test_plan(db: Session, test_run_id: int) -> Optional[TestPlan]:
     """
     Get the test plan for a test run
     """
-    statement = select(TestPlan).where(TestPlan.test_run_id == test_run_id)
-    return db.exec(statement).first()
+    return db.query(TestPlan).filter(TestPlan.test_run_id == test_run_id).first()
 
 
 # Test Case operations
@@ -132,8 +120,7 @@ def get_test_cases(db: Session, test_run_id: int) -> List[TestCase]:
     """
     Get all test cases for a test run
     """
-    statement = select(TestCase).where(TestCase.test_run_id == test_run_id)
-    return db.exec(statement).all()
+    return db.query(TestCase).filter(TestCase.test_run_id == test_run_id).all()
 
 
 def update_test_case(
@@ -146,8 +133,7 @@ def update_test_case(
     """
     Update a test case with results
     """
-    statement = select(TestCase).where(TestCase.id == test_case_id)
-    db_test_case = db.exec(statement).first()
+    db_test_case = db.query(TestCase).filter(TestCase.id == test_case_id).first()
     if db_test_case:
         db_test_case.actual_result = actual_result
         db_test_case.status = status
@@ -178,9 +164,4 @@ def get_test_logs(db: Session, test_run_id: int) -> List[TestLog]:
     """
     Get all logs for a test run
     """
-    statement = (
-        select(TestLog)
-        .where(TestLog.test_run_id == test_run_id)
-        .order_by(TestLog.timestamp)
-    )
-    return db.exec(statement).all()
+    return db.query(TestLog).filter(TestLog.test_run_id == test_run_id).order_by(TestLog.timestamp).all()

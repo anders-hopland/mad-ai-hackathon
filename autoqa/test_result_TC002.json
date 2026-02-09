@@ -1,5 +1,1 @@
-{
-  "actual_result": "Navigated to a category page, added a product to the basket, and clicked the '+' button. The quantity displayed for the product updated from 1 to 2.",
-  "status": "PASS",
-  "notes": "The quantity increased as expected on the category page."
-}
+{"actual_result": "Navigated to https://oda.no/, accepted cookies, searched for 'banana'. Located 'Bananer i Klase' and clicked the '+' button three times. The quantity displayed next to 'Bananer i Klase' is now 3, and the cart summary shows 'Du har 3 varer i handlekurven'.", "status": "PASS", "notes": "The quantity of 'Bananer i Klase' increased with each click of the '+' button, and the cart summary updated accordingly."}

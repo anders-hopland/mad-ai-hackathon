@@ -16,7 +16,7 @@ from fastapi import Depends, HTTPException, status
 from fastapi.security import OAuth2PasswordBearer
 from jwt.exceptions import InvalidTokenError
 from pydantic import BaseModel
-from sqlmodel import Session, select
+from sqlalchemy.orm import Session
 
 from .database import User, get_db
 
@@ -78,19 +78,17 @@ def create_access_token(data: dict, expires_delta: Optional[timedelta] = None):
 
 def get_user_by_id(db: Session, user_id: int) -> Optional[User]:
     """Get user by ID from database"""
-    return db.get(User, user_id)
+    return db.query(User).filter(User.id == user_id).first()
 
 
 def get_user_by_email(db: Session, email: str) -> Optional[User]:
     """Get user by email from database"""
-    statement = select(User).where(User.email == email)
-    return db.exec(statement).first()
+    return db.query(User).filter(User.email == email).first()
 
 
 def get_user_by_google_id(db: Session, google_id: str) -> Optional[User]:
     """Get user by Google ID from database"""
-    statement = select(User).where(User.google_id == google_id)
-    return db.exec(statement).first()
+    return db.query(User).filter(User.google_id == google_id).first()
 
 
 def create_user(
