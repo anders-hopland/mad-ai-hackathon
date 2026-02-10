@@ -1,0 +1,3 @@
+[submodule "mad-ai-hackathon"]
+	path = mad-ai-hackathon
+	url = https://github.com/anders-hopland/mad-ai-hackathon.git
